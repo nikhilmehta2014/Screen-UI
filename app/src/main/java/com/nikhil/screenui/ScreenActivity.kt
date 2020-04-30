@@ -47,11 +47,11 @@ class ScreenActivity : AppCompatActivity() {
         })
     }
 
-    fun basicAlert(view: View) {
+    fun showDialog(view: View) {
         val builder = AlertDialog.Builder(this)
         with(builder)
         {
-            setTitle("Welcome ${"abcd@gmail.com"}")     //TODO: get from VM
+            setTitle("Welcome ${viewModel.email.value}")
             setPositiveButton("OK", positiveButtonClick)      //TODO: get from strings.xml
             show()
         }
@@ -63,7 +63,9 @@ class ScreenActivity : AppCompatActivity() {
 
     fun validateFields(v:View){
         viewModel.validateFields()
+//        showDialog(v)
     }
+
 
 
 }
