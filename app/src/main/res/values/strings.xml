@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Screen UI</string>
+    <string name="title">Screen Titlle</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_confirm">Confirm Passwoord</string>
+    <string name="submit">Submit</string>
+    <string name="OK" />
+</resources>
