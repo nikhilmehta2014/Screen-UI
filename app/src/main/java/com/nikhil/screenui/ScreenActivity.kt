@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.nikhil.screenui.databinding.ActivityScreenBinding
 
@@ -32,6 +33,18 @@ class ScreenActivity : AppCompatActivity() {
         if (resources.getBoolean(R.bool.portrait_only)) {
             requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         }
+
+        viewModel.emailError.observe(this, Observer {
+            activityScreenBinding.etEmailLayout.error = it
+        })
+
+        viewModel.passwordError.observe(this, Observer {
+            activityScreenBinding.etPasswordLayout.error = it
+        })
+
+        viewModel.confirmPasswordError.observe(this, Observer {
+            activityScreenBinding.etPasswordConfirmLayout.error = it
+        })
     }
 
     fun basicAlert(view: View) {
@@ -46,6 +59,10 @@ class ScreenActivity : AppCompatActivity() {
 
     private val positiveButtonClick = { dialog: DialogInterface, which: Int ->
         Toast.makeText(applicationContext, "OK", Toast.LENGTH_SHORT).show()     //TODO: get from strings.xml
+    }
+
+    fun validateFields(v:View){
+        viewModel.validateFields()
     }
 
 

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Screen UI</string>
-    <string name="title">Screen Titlle</string>
+    <string name="title">Screen Title</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_password_confirm">Confirm Passwoord</string>
