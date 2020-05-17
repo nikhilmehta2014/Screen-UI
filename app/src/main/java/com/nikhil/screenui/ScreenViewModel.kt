@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ScreenViewModel : ViewModel() {
-    val email = MutableLiveData<String>()
-    val password = MutableLiveData<String>()
-    val confirmPassword = MutableLiveData<String>()
+    val email = MutableLiveData<String>("")
+    val password = MutableLiveData<String>("")
+    val confirmPassword = MutableLiveData<String>("")
 
     val emailError = MutableLiveData<String>()
     val passwordError = MutableLiveData<String>()
